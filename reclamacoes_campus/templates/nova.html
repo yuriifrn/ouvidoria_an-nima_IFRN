@@ -1,53 +1,196 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
+
 <head>
+
+<meta charset="UTF-8">
 <title>Nova Reclamação</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#edf2f7;
+}
+
+header{
+    background:#0d47a1;
+    color:white;
+    text-align:center;
+    padding:25px;
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+}
+
+.container{
+
+    width:90%;
+    max-width:700px;
+    margin:40px auto;
+
+}
+
+.card{
+
+    background:white;
+    padding:35px;
+    border-radius:10px;
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+
+}
+
+h2{
+
+    color:#0d47a1;
+    margin-bottom:25px;
+    text-align:center;
+
+}
+
+label{
+
+    display:block;
+    margin-top:15px;
+    margin-bottom:8px;
+    font-weight:bold;
+
+}
+
+input,
+textarea,
+select{
+
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:15px;
+
+}
+
+textarea{
+
+    resize:vertical;
+    min-height:130px;
+
+}
+
+button{
+
+    margin-top:25px;
+    width:100%;
+    padding:14px;
+    border:none;
+    background:#1976d2;
+    color:white;
+    font-size:17px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#0d47a1;
+
+}
+
+.voltar{
+
+    display:block;
+    margin-top:20px;
+    text-align:center;
+    text-decoration:none;
+    color:#1976d2;
+    font-weight:bold;
+
+}
+
+.voltar:hover{
+
+    color:#0d47a1;
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-<h1>Nova Reclamação Anônima</h1>
+<header>
+
+<h1>📢 Canal Anônimo de Reclamações</h1>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Nova Reclamação</h2>
 
 <form action="/salvar" method="POST">
 
-<input type="text"
+<label>Título</label>
+
+<input
+type="text"
 name="titulo"
-placeholder="Título"
 required>
 
-<br><br>
+<label>Descrição</label>
 
 <textarea
 name="descricao"
-placeholder="Descreva o problema"
-required>
-</textarea>
+required></textarea>
 
-<br><br>
+<label>Categoria</label>
 
 <select name="categoria">
 
 <option>Infraestrutura</option>
 <option>Limpeza</option>
 <option>Segurança</option>
-<option>Wi-Fi</option>
+<option>Internet</option>
+<option>Banheiros</option>
+<option>Refeitório</option>
+<option>Equipamentos</option>
 <option>Outros</option>
 
 </select>
 
-<br><br>
+<label>Local</label>
 
-<input type="text"
+<input
+type="text"
 name="local"
-placeholder="Local do problema"
 required>
 
-<br><br>
-
 <button type="submit">
+
 Enviar Reclamação
+
 </button>
 
 </form>
 
+<a class="voltar" href="/">
+
+← Voltar
+
+</a>
+
+</div>
+
+</div>
+
 </body>
+
 </html>
